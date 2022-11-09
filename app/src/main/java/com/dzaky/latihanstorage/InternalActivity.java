@@ -56,7 +56,7 @@ public class InternalActivity extends AppCompatActivity implements View.OnClickL
     }
 
     void ubahFile(){
-        String ubah = "Semangat Berjuang Peserta DTS";
+        String ubah = "file telah diubah";
         File file = new File(getFilesDir(), FILENAME);
 
         FileOutputStream outputStream = null;
