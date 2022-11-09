@@ -40,7 +40,7 @@ public class InternalActivity extends AppCompatActivity implements View.OnClickL
     }
 
     void buatFile() {
-        String isiFile = "Coba Isi Data File Text";
+        String isiFile = "Ini adalah isi file";
         File file = new File(getFilesDir(), FILENAME);
 
         FileOutputStream outputStream = null;
@@ -50,13 +50,15 @@ public class InternalActivity extends AppCompatActivity implements View.OnClickL
             outputStream.write(isiFile.getBytes());
             outputStream.flush();
             outputStream.close();
+
+            Toast.makeText(this, "Berhasil membuat file", Toast.LENGTH_LONG).show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     void ubahFile(){
-        String ubah = "file telah diubah";
+        String ubah = "Mengubah file";
         File file = new File(getFilesDir(), FILENAME);
 
         FileOutputStream outputStream = null;
@@ -68,7 +70,7 @@ public class InternalActivity extends AppCompatActivity implements View.OnClickL
             outputStream.flush();
             outputStream.close();
 
-            Toast.makeText(this, "file berhasil diubah", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "File berhasil diubah", Toast.LENGTH_LONG).show();
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -100,12 +102,22 @@ public class InternalActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    void hapusFile() {
+    void deleteFile() {
         File file = new File(getFilesDir(), FILENAME);
         if (file.exists()) {
-            file.exists();
+            file.delete();
         }
     }
+
+//    void hapusFile() {
+//        File file = new File(getFilesDir(), FILENAME);
+//        if (file.exists()) {
+//            file.delete();
+//            Toast.makeText(this, "Berhasil menghapus File", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(this, "Gagal mengahpus File", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
     public void jalanPerintah(int id) {
         switch (id) {
@@ -119,7 +131,7 @@ public class InternalActivity extends AppCompatActivity implements View.OnClickL
                 ubahFile();
                 break;
             case R.id.buttonHapusFile:
-                hapusFile();
+                deleteFile();
                 break;
         }
     }
