@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hapus File"/>
-    
+
     <TextView
         android:id="@+id/textBaca"
         android:layout_width="match_parent"
@@ -39,6 +39,7 @@
         android:padding="5dp"
         android:textColorHint="#000"
         android:hint="Hasil Baca File"
+        android:singleLine="false"
         android:inputType="textMultiLine"/>
 
 </LinearLayout>
