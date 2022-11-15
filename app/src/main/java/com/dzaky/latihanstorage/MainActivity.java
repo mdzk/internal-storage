@@ -14,14 +14,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnMoveActivity = findViewById((R.id.btn_move_activity));
-        btnMoveActivity.setOnClickListener(this);
+        Button btnIntActivity = findViewById((R.id.btn_int_activity));
+        btnIntActivity.setOnClickListener(this);
+
+        Button btnEksActivity = findViewById((R.id.btn_eks_activity));
+        btnEksActivity.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.btn_move_activity) {
+        if (view.getId() == R.id.btn_int_activity) {
             Intent moveIntent = new Intent( MainActivity.this, InternalActivity.class);
+            startActivity(moveIntent);
+        } else if (view.getId() == R.id.btn_eks_activity) {
+            Intent moveIntent = new Intent(MainActivity.this, EksternalActivity.class);
             startActivity(moveIntent);
         }
     }
